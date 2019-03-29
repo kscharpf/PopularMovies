@@ -20,7 +20,7 @@ class MovieApi {
 
     private static final String TAG = "MovieApi";
     // TODO: Replace API_KEY with your own key
-    private static final String API_KEY="YOUR KEY HERE";
+    private static final String API_KEY="YOUR_API_KEY";
     private String base_url = "";
     private final String mSortCriterion;
     static final String POPULARITY_SORT="popularity.desc";
@@ -50,6 +50,14 @@ class MovieApi {
             }
         }
     }
+
+    /**
+     * Original structure of the fetchItems method was taken from the
+     * bignerdranch Android programming guide for retrieving photos
+     * from flickr.
+     *
+     * @return
+     */
     @NonNull
     List<MovieItem> fetchItems() {
         getConfiguration();
@@ -68,9 +76,6 @@ class MovieApi {
 
             String jsonString = getUrlString(url);
             JSONObject jsonBody = new JSONObject(jsonString);
-
-
-
             parseItems(items, jsonBody);
 
         } catch (IOException ioe) {
@@ -81,6 +86,14 @@ class MovieApi {
         return items;
     }
 
+    /**
+     * The structure of parseItems was originally taken from the PhotoGallery
+     * application in the bignerdranch Android programming guide.
+     *
+     * @param items array of movie items - populated in this method
+     * @param jsonBody JSON content
+     * @throws JSONException
+     */
     private void parseItems(@NonNull List<MovieItem> items, JSONObject jsonBody)
             throws JSONException
     {

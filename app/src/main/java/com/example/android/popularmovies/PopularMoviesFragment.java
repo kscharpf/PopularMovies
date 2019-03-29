@@ -146,6 +146,10 @@ public class PopularMoviesFragment extends Fragment {
     }
 
 
+    /**
+     * setupAdapter was originally taken from the bignerdranch
+     * Android programming guide.
+     */
     private void setupAdapter() {
         if(isAdded()) {
             mRecyclerView.setAdapter(new MovieAdapter(mItems));
