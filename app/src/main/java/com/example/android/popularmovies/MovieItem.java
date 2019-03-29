@@ -54,7 +54,7 @@ public class MovieItem implements Parcelable {
         return mTitle;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(@Nullable String title) {
         mTitle = title;
     }
 
@@ -63,7 +63,7 @@ public class MovieItem implements Parcelable {
         return mUrl;
     }
 
-    public void setUrl(String url) {
+    public void setUrl(@Nullable String url) {
         mUrl = url;
     }
 
@@ -72,16 +72,11 @@ public class MovieItem implements Parcelable {
         return mBigUrl;
     }
 
-    public void setBigUrl(String bigUrl) {
+    public void setBigUrl(@Nullable String bigUrl) {
         mBigUrl = bigUrl;
     }
 
-    @Nullable
-    public String getId() {
-        return mId;
-    }
-
-    public void setId(String id) {
+    public void setId(@Nullable String id) {
         mId = id;
     }
 
@@ -90,7 +85,7 @@ public class MovieItem implements Parcelable {
         return mOverview;
     }
 
-    public void setOverview(String overview) {
+    public void setOverview(@Nullable String overview) {
         mOverview = overview;
     }
 
@@ -99,7 +94,7 @@ public class MovieItem implements Parcelable {
         return mVoteAverage;
     }
 
-    public void setVoteAverage(String voteAverage) {
+    public void setVoteAverage(@Nullable String voteAverage) {
         mVoteAverage = voteAverage;
     }
 
@@ -108,11 +103,10 @@ public class MovieItem implements Parcelable {
         return mReleaseDate;
     }
 
-    public void setReleaseDate(String releaseDate) {
+    public void setReleaseDate(@Nullable String releaseDate) {
         mReleaseDate = releaseDate;
     }
 
-    @NonNull
     public String toString() {
         return mTitle;
     }
