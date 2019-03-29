@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PopularMovies</string>
+    <string name="popular_label">Popular</string>
+    <string name="toprated_label">Top-Rated</string>
+    <string name="movie_icon">Movie Icon</string>
+    <string name="movie_rating_label">Average Movie Rating: %1$s</string>
+    <string name="release_date_label">Release Date: %1$s</string>
+</resources>
