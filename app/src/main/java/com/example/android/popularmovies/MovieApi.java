@@ -23,10 +23,10 @@ class MovieApi {
     private static final String API_KEY="YOUR KEY HERE";
     private String base_url = "";
     private final String mSortCriterion;
-    public static final String POPULARITY_SORT="popularity.desc";
-    public static final String TOP_RATED_SORT="vote_average.desc";
+    static final String POPULARITY_SORT="popularity.desc";
+    static final String TOP_RATED_SORT="vote_average.desc";
 
-    public MovieApi(final String sortCriterion) {
+    MovieApi(final String sortCriterion) {
         mSortCriterion = sortCriterion;
     }
 
@@ -51,7 +51,7 @@ class MovieApi {
         }
     }
     @NonNull
-    public List<MovieItem> fetchItems() {
+    List<MovieItem> fetchItems() {
         getConfiguration();
         List<MovieItem> items = new ArrayList<>();
         try {
@@ -102,6 +102,17 @@ class MovieApi {
             items.add(item);
         }
     }
+
+    /**
+     * getUrlBytes was originally taken from the PhotoGallery application
+     * from the bignerdranch Android programming guide. The application
+     * is licensed under the Apache 2.0 license. This method is used
+     * without alteration.
+     *
+     * @param urlSpec URL to retrieve data from
+     * @return byte array of returned data from the URL
+     * @throws IOException I/O error
+     */
     private byte[] getUrlBytes(String urlSpec) throws IOException{
         URL url = new URL(urlSpec);
         HttpURLConnection connection = (HttpURLConnection)url.openConnection();
@@ -125,6 +136,15 @@ class MovieApi {
         }
     }
 
+    /**
+     * getUrlString was taken from the bignerdranch Android programming guide.
+     * The application is licensed under the Apache 2.0 license. This method
+     * is used here without alteration.
+     *
+     * @param urlSpec URL to retrieve data from
+     * @return JSON data from the URL
+     * @throws IOException I/O error
+     */
     private String getUrlString(String urlSpec) throws IOException {
         return new String(getUrlBytes(urlSpec));
     }
