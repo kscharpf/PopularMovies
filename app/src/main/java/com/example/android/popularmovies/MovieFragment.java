@@ -45,7 +45,7 @@ public class MovieFragment extends Fragment {
         Log.i(TAG, "onCreateView: " + mMovieItem);
         View v = inflater.inflate(R.layout.movie_activity_fragment, container, false);
         TextView titleTv = v.findViewById(R.id.movie_title_tv);
-        titleTv.setText(mMovieItem.getTitle());
+        titleTv.setText(Objects.requireNonNull(mMovieItem).getTitle());
 
         ImageView imageView = v.findViewById(R.id.movie_iv);
         Picasso.get()
